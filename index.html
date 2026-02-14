@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For You ❤️</title>
+
+<style>
+body {
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(-45deg, #ff9a9e, #fad0c4, #fad0c4, #ffdde1);
+    background-size: 400% 400%;
+    animation: gradientBG 10s ease infinite;
+    font-family: 'Segoe UI', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    text-align: center;
+    color: white;
+}
+
+@keyframes gradientBG {
+    0% {background-position: 0% 50%;}
+    50% {background-position: 100% 50%;}
+    100% {background-position: 0% 50%;}
+}
+
+.container {
+    background: rgba(0, 0, 0, 0.4);
+    padding: 40px;
+    border-radius: 20px;
+    backdrop-filter: blur(10px);
+    animation: fadeIn 2s ease;
+    max-width: 600px;
+}
+
+h1 {
+    font-size: 35px;
+    animation: glow 2s infinite alternate;
+}
+
+p {
+    font-size: 18px;
+    margin-top: 15px;
+    line-height: 1.6;
+}
+
+@keyframes fadeIn {
+    from {opacity: 0; transform: translateY(30px);}
+    to {opacity: 1; transform: translateY(0);}
+}
+
+@keyframes glow {
+    from {text-shadow: 0 0 10px #fff;}
+    to {text-shadow: 0 0 25px #ff4b5c;}
+}
+
+button {
+    margin: 10px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 20px;
+    background: #ff4b5c;
+    color: white;
+    font-size: 14px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    background: white;
+    color: #ff4b5c;
+}
+
+.message {
+    margin-top: 20px;
+    font-size: 18px;
+    min-height: 60px;
+    transition: 0.5s;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+    <h1>For My Special One ❤️</h1>
+
+    <p>
+        I wanted to give you something special,  
+        not just a gift… but a feeling 💕
+    </p>
+
+    <div>
+        <button onclick="showGift('flowers')">🌸 Flowers</button>
+        <button onclick="showGift('letter')">💌 Love Letter</button>
+        <button onclick="showGift('ring')">💍 Promise Ring</button>
+        <button onclick="showGift('surprise')">🎁 Surprise Gift</button>
+    </div>
+
+    <div class="message" id="giftMessage"></div>
+</div>
+
+<script>
+function showGift(type) {
+    let message = "";
+
+    if(type === "flowers") {
+        message = "These flowers represent how beautiful you are inside and out. Just like them, you brighten my life every day 🌸";
+    }
+    else if(type === "letter") {
+        message = "This letter carries my heart in words. Every sentence is filled with care, appreciation, and love for you 💌";
+    }
+    else if(type === "ring") {
+        message = "This ring is not just jewelry. It’s a promise that I will always value, respect, and stand by you 💍";
+    }
+    else if(type === "surprise") {
+        message = "The real gift is my time, my effort, and my heart that I happily give to you every single day 🎁❤️";
+    }
+
+    document.getElementById("giftMessage").innerText = message;
+}
+</script>
+
+</body>
+</html>
